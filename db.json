@@ -1,0 +1,68 @@
+{
+  "logs": [
+    {
+      "message": "get 1 request",
+      "attention": false,
+      "tech": "Noah Brown",
+      "date": "2019-09-04T14:39:33.286Z",
+      "id": 5
+    },
+    {
+      "message": "get 2 request",
+      "attention": false,
+      "tech": "Noah Brown",
+      "date": "2019-09-04T14:39:42.236Z",
+      "id": 6
+    },
+    {
+      "message": "get 3 request",
+      "attention": false,
+      "tech": "Noah Brown",
+      "date": "2019-09-04T14:39:50.919Z",
+      "id": 7
+    },
+    {
+      "message": "hjgfjhgfghf . new new",
+      "attention": false,
+      "tech": "Liam Martin",
+      "date": "2019-09-04T19:12:57.944Z",
+      "id": 8
+    },
+    {
+      "message": "coffee machine is down",
+      "attention": true,
+      "tech": "Olivia Smith",
+      "date": "2019-09-05T13:12:29.060Z",
+      "id": 9
+    },
+    {
+      "message": "copy machine has paper jam",
+      "attention": false,
+      "tech": "Liam Martin",
+      "date": "2019-09-05T13:13:04.798Z",
+      "id": 10
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "Olivia",
+      "lastName": "Smith"
+    },
+    {
+      "id": 2,
+      "firstName": "Noah",
+      "lastName": "Brown"
+    },
+    {
+      "id": 3,
+      "firstName": "Liam",
+      "lastName": "Martin"
+    },
+    {
+      "firstName": "Alex",
+      "lastName": "Wilson",
+      "id": 4
+    }
+  ]
+}
