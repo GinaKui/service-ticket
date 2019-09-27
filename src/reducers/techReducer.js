@@ -1,8 +1,8 @@
 import {
+  SET_LOADING,
   GET_TECHS,
   ADD_TECH,
   DELETE_TECH,
-  SET_LOADING,
   TECHS_ERROR
 } from '../actions/types';
 

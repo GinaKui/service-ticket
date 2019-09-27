@@ -6,7 +6,7 @@ import Preloader from '../layout/Preloader';
 import LogItem from './LogItem';
 import { getLogs } from '../../actions/logActions';
 
-const Logs = ({ log: { logs, loading }, getLogs }) => {
+const LogList = ({ log: { logs, loading }, getLogs }) => {
   useEffect(() => {
     getLogs();
     // eslint-disable-next-line
@@ -30,7 +30,7 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
   );
 };
 
-Logs.propTypes = {
+LogList.propTypes = {
   log: PropTypes.object.isRequired,
   getLogs: PropTypes.func.isRequired
 };
@@ -42,4 +42,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { getLogs }
-)(Logs);
+)(LogList);

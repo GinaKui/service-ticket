@@ -1,16 +1,22 @@
 import {
+  SET_LOADING,
   GET_TECHS,
   ADD_TECH,
   DELETE_TECH,
-  SET_LOADING,
   TECHS_ERROR
 } from './types';
+
+// Set loading to true
+export const setLoading = () => {
+  return {
+    type: SET_LOADING
+  };
+};
 
 // Get techs from server
 export const getTechs = () => async dispatch => {
   try {
     setLoading();
-
     const res = await fetch('/techs');
     const data = await res.json();
 
@@ -30,7 +36,6 @@ export const getTechs = () => async dispatch => {
 export const addTech = tech => async dispatch => {
   try {
     setLoading();
-
     const res = await fetch('/techs', {
       method: 'POST',
       body: JSON.stringify(tech),
@@ -52,10 +57,13 @@ export const addTech = tech => async dispatch => {
   }
 };
 
+/*
+* @para id {string}
+* delete a tech at the server
+*/
 export const deleteTech = id => async dispatch => {
   try {
     setLoading();
-
     await fetch(`/techs/${id}`, {
       method: 'DELETE'
     });
@@ -72,9 +80,3 @@ export const deleteTech = id => async dispatch => {
   }
 };
 
-// Set loading to true
-export const setLoading = () => {
-  return {
-    type: SET_LOADING
-  };
-};

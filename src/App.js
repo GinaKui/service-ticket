@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
+
 import AddBtn from './components/layout/AddBtn';
 import SearchBar from './components/layout/SearchBar';
 import Footer from './components/layout/Footer';
-import Logs from './components/logs/Logs';
+import LogList from './components/logs/LogList';
 import AddLogModal from './components/logs/AddLogModal';
 import EditLogModal from './components/logs/EditLogModal';
 import AddTechModal from './components/techs/AddTechModal';
@@ -22,16 +23,16 @@ const App = () => {
 
   return (
     <Provider store={store}>
-        <SearchBar />
-        <div className='container'>
-          <AddBtn />
-          <AddLogModal />
-          <EditLogModal />
-          <AddTechModal />
-          <TechListModal />
-          <Logs />
-        </div>
-        <Footer />
+      <SearchBar />
+      <div className='container'>
+        <AddBtn />
+        <AddLogModal />
+        <EditLogModal />
+        <AddTechModal />
+        <TechListModal />
+        <LogList />
+      </div>
+      <Footer />
     </Provider>
   );
 };
