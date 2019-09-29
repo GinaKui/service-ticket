@@ -25,10 +25,11 @@ export const getTechs = () => async dispatch => {
       payload: data
     });
   } catch (err) {
-    dispatch({
-      type: TECHS_ERROR,
-      payload: err.response.statusText
-    });
+    // dispatch({
+    //   type: TECHS_ERROR,
+    //   payload: err.response.statusText
+    // });
+    addError(err.response.statusText);
   }
 };
 
@@ -50,10 +51,7 @@ export const addTech = tech => async dispatch => {
       payload: data
     });
   } catch (err) {
-    dispatch({
-      type: TECHS_ERROR,
-      payload: err.response.statusText
-    });
+    addError(err.response.statusText);
   }
 };
 
@@ -73,10 +71,13 @@ export const deleteTech = id => async dispatch => {
       payload: id
     });
   } catch (err) {
-    dispatch({
-      type: TECHS_ERROR,
-      payload: err.response.statusText
-    });
+    addError(err.response.statusText);
   }
 };
 
+const addError = (msg) => {
+  return {
+    type: TECHS_ERROR,
+    payload: msg
+  };
+};
