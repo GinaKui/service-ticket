@@ -2,12 +2,17 @@
   "name": "service-ticket",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/GinaKui/service-ticket",
+  "author": {
+    "name": "Gina Kui",
+    "email": "developerkui@outlook.com"
+  },
   "dependencies": {
     "materialize-css": "^1.0.0",
     "moment": "^2.24.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-moment": "^0.9.4",
+    "react-moment": "^0.9.6",
     "react-redux": "^7.1.1",
     "react-scripts": "^3.2.0",
     "redux": "^4.0.4",
