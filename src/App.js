@@ -23,16 +23,18 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <SearchBar />
-      <div className='container'>
-        <AddBtn />
-        <AddLogModal />
-        <EditLogModal />
-        <AddTechModal />
-        <TechListModal />
-        <LogList />
+      <div className="App">
+        <SearchBar />
+        <main className="container">
+          <AddBtn />
+          <AddLogModal />
+          <EditLogModal />
+          <AddTechModal />
+          <TechListModal />
+          <LogList />
+        </main>
+        <Footer />
       </div>
-      <Footer />
     </Provider>
   );
 };
