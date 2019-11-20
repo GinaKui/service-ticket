@@ -25,8 +25,9 @@ const App = () => {
     <Provider store={store}>
       <div className="App">
         <SearchBar />
+        <AddBtn />
         <main className="container">
-          <AddBtn />
+          
           <AddLogModal />
           <EditLogModal />
           <AddTechModal />

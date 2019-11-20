@@ -1,13 +1,6 @@
 {
   "logs": [
     {
-      "id": 5,
-      "message": "get 1 request",
-      "attention": true,
-      "tech": "Noah Brown",
-      "date": "2019-09-29T15:47:33.574Z"
-    },
-    {
       "message": "coffee machine is down",
       "attention": true,
       "tech": "Olivia Smith",

@@ -2,8 +2,20 @@
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  position: relative;
 }
 
 main {
   flex: 1 0 auto;
+}
+
+a:link,
+a:visited {
+  color: inherit;
+  transition: all .2s;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
 }

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Preloader from '../layout/Preloader';
+import AddBtn from '../layout/AddBtn';
 import LogItem from './LogItem';
 import { getLogs } from '../../actions/logActions';
 
@@ -18,8 +19,12 @@ const LogList = ({ log: { logs, loading }, getLogs }) => {
 
   return (
     <ul className='collection with-header'>
+    
       <li className='collection-header'>
-        <h4 className='center'>Service Requests</h4>
+        <h4 className='center'>
+          Service Requests
+        </h4>
+        
       </li>
       {logs.length === 0 ? (
         <p className='center'>No tickets right now...</p>
