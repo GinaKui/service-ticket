@@ -9,6 +9,10 @@ main {
   flex: 1 0 auto;
 }
 
+footer {
+  max-height: 4rem;
+}
+
 a:link,
 a:visited {
   color: inherit;
