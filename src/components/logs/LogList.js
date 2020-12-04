@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Preloader from '../layout/Preloader';
-import AddBtn from '../layout/AddBtn';
 import LogItem from './LogItem';
 import { getLogs } from '../../actions/logActions';
 
@@ -19,7 +18,7 @@ const LogList = ({ log: { logs, loading }, getLogs }) => {
 
   return (
     <ul className='collection with-header'>
-    
+    {/*TODO: the title need to be moved out of <ul> */}
       <li className='collection-header'>
         <h4 className='center'>
           Service Requests

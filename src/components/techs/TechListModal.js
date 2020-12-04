@@ -11,7 +11,7 @@ const TechListModal = ({ getTechs, tech: { techs, loading } }) => {
   }, []);
 
   return (
-    <div id='tech-list-modal' className='modal'>
+    <div id='tech-list-modal' className='modal modal-fixed-footer'>
       <div className='modal-content'>
         <h4>Technician List</h4>
         <ul className='collection'>

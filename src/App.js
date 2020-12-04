@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import AddBtn from './components/layout/AddBtn';
+import PageFAB from './components/layout/PageFAB';
 import SearchBar from './components/layout/SearchBar';
 import Footer from './components/layout/Footer';
 import LogList from './components/logs/LogList';
@@ -25,9 +25,8 @@ const App = () => {
     <Provider store={store}>
       <div className="App">
         <SearchBar />
-        <AddBtn />
-        <main className="container">
-          
+        <PageFAB />
+        <main className="container">  
           <AddLogModal />
           <EditLogModal />
           <AddTechModal />

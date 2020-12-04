@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AddBtn = () => (
-    <div className='fixed-action-btn' style={{position: 'absolute', bottom: '80px'}}>
+const PageFAB = () => (
+    <div className='fixed-action-btn' style={{position: 'absolute', bottom: '80px', right: '60px'}}>
       <a
         href='#add-log-modal'
         className='btn-floating btn-large indigo modal-trigger waves-effect waves-light'
-        title='new request ticket'
+        title='create request'
       >
         <i className='large material-icons'>mode_edit</i>
       </a>
@@ -33,4 +33,4 @@ const AddBtn = () => (
   );
 
 
-export default AddBtn;
+export default PageFAB;
