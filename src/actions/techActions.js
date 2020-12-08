@@ -14,7 +14,7 @@ export const setLoading = () => {
 };
 
 // Get techs from server
-export const getTechs = () => async dispatch => {
+/* export const getTechs = () => async dispatch => {
   try {
     setLoading();
     const res = await fetch('/techs');
@@ -31,10 +31,10 @@ export const getTechs = () => async dispatch => {
     // });
     addError(err.response.statusText);
   }
-};
+}; */
 
 // Add technician to server
-export const addTech = tech => async dispatch => {
+/* export const addTech = tech => async dispatch => {
   try {
     setLoading();
     const res = await fetch('/techs', {
@@ -53,13 +53,13 @@ export const addTech = tech => async dispatch => {
   } catch (err) {
     addError(err.response.statusText);
   }
-};
+}; */
 
 /*
 * @para id {string}
 * delete a tech at the server
 */
-export const deleteTech = id => async dispatch => {
+/* export const deleteTech = id => async dispatch => {
   try {
     setLoading();
     await fetch(`/techs/${id}`, {
@@ -73,7 +73,7 @@ export const deleteTech = id => async dispatch => {
   } catch (err) {
     addError(err.response.statusText);
   }
-};
+}; */
 
 const addError = (msg) => {
   return {

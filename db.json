@@ -48,19 +48,16 @@
       "tech": "Alex Wilson",
       "date": "2020-12-08T11:35:43.893Z",
       "id": 15
+    },
+    {
+      "message": "fix power supply",
+      "attention": false,
+      "tech": "Alex Wilson",
+      "date": "2020-12-08T21:56:21.200Z",
+      "id": 16
     }
   ],
   "techs": [
-    {
-      "id": 1,
-      "firstName": "Olivia",
-      "lastName": "Smith"
-    },
-    {
-      "id": 2,
-      "firstName": "Noah",
-      "lastName": "Brown"
-    },
     {
       "id": 3,
       "firstName": "Liam",
