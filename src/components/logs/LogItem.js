@@ -6,7 +6,7 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 
 import { deleteLog, setCurrent } from '../../actions/logActions';
 
-
+//@TODO: - wrap component in React.memo() to avoid  unnecessary re-render
 const LogItem = ({ log, deleteLog, setCurrent }) => {
   const onDelete = () => {
     deleteLog(log.id);
