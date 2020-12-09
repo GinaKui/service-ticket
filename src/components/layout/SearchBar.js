@@ -1,14 +1,13 @@
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-
+import { useDispatch } from 'react-redux';
 import { searchLog } from '../logs/logSlice';
 
-const SearchBar = ({ searchLog }) => {
+const SearchBar = () => {
   const textInput = useRef('');
+  const dispatch = useDispatch();
 
-  const onChange = e => {
-    searchLog(textInput.current.value);
+  const handleChange = e => {
+    dispatch(searchLog(textInput.current.value));
   };
 
   return (
@@ -21,7 +20,7 @@ const SearchBar = ({ searchLog }) => {
               type='search'
               placeholder='Search'
               ref={textInput}
-              onChange={onChange}
+              onChange={handleChange}
             />
             <label className='label-icon' htmlFor='search'>
               <i className='material-icons'>search</i>
@@ -33,14 +32,7 @@ const SearchBar = ({ searchLog }) => {
   );
 };
 
-SearchBar.propTypes = {
-  searchLog: PropTypes.func.isRequired
-};
-
-export default connect(
-  null,
-  { searchLog }
-)(SearchBar);
+export default SearchBar;
 
 
 
