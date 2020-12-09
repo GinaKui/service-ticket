@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Preloader from '../layout/Preloader';
 import LogItem from './LogItem';
-import { getLogs } from '../../actions/logActions';
+import { getLogs } from './logSlice';
 
 const LogList = ({ log: { logs, loading }, getLogs }) => {
   useEffect(() => {

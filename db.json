@@ -22,39 +22,11 @@
       "id": 11
     },
     {
-      "message": "fix monitor",
-      "attention": false,
-      "tech": "Alex Wilson",
-      "date": "2020-12-03T21:13:52.409Z",
-      "id": 12
-    },
-    {
-      "message": "fix #5 server",
-      "attention": false,
-      "tech": "Olivia Smith",
-      "date": "2020-12-03T21:14:08.991Z",
-      "id": 13
-    },
-    {
       "message": "fix #9 server",
       "attention": false,
       "tech": "Olivia Smith",
       "date": "2020-12-03T21:14:21.269Z",
       "id": 14
-    },
-    {
-      "message": "fix # 11 server",
-      "attention": true,
-      "tech": "Alex Wilson",
-      "date": "2020-12-08T11:35:43.893Z",
-      "id": 15
-    },
-    {
-      "message": "fix power supply",
-      "attention": false,
-      "tech": "Alex Wilson",
-      "date": "2020-12-08T21:56:21.200Z",
-      "id": 16
     }
   ],
   "techs": [

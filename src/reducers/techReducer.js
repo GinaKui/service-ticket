@@ -1,3 +1,4 @@
+//this file could be removed
 import {
   SET_LOADING,
   GET_TECHS,
