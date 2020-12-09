@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import { Provider } from 'react-redux';
-import store from './store';
 
 import PageFAB from './components/layout/PageFAB';
 import SearchBar from './components/layout/SearchBar';
@@ -22,20 +20,18 @@ const App = () => {
   },[]);
 
   return (
-    <Provider store={store}>
-      <div className="App">
-        <SearchBar />
-        <PageFAB />
-        <main className="container">  
-          <AddLogModal />
-          <EditLogModal />
-          <AddTechModal />
-          <TechListModal />
-          <LogList />
-        </main>
-        <Footer />
-      </div>
-    </Provider>
+    <div className="App">
+      <SearchBar />
+      <PageFAB />
+      <main className="container">  
+        <AddLogModal />
+        <EditLogModal />
+        <AddTechModal />
+        <TechListModal />
+        <LogList />
+      </main>
+      <Footer />
+    </div>
   );
 };
 

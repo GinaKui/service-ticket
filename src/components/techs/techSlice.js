@@ -58,6 +58,7 @@ const techSlice = createSlice({
     }
   },
   extraReducers: {
+    //@TODO: - loading should be set here as .pending
     [getTechs.fulfilled]: (state, action) => {
       state.techs = action.payload;
       state.loading = false;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import TechSelectOptions from '../techs/TechSelectOptions';
-//import { addLog } from '../../actions/logActions';
 import { addLog } from './logSlice';
+import TechSelectOptions from '../techs/TechSelectOptions';
+
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const AddLogModal = ({ addLog }) => {

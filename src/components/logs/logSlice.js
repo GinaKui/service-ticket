@@ -60,6 +60,15 @@ const updateLog = createAsyncThunk(
   }
 );
 
+const searchLog = createAsyncThunk(
+  'log/searchLog',
+  async (text, thunkAPI) => {
+    const res = await fetch(`/logs?q=${text}`);
+    const data = await res.json();
+    return data;
+  }
+);
+
 const logSlice = createSlice({
   name: 'log',
   initialState,
@@ -90,10 +99,14 @@ const logSlice = createSlice({
     [updateLog.fulfilled]: (state, action) => {
       state.logs = state.logs.map( log => log.id === action.payload.id ? action.payload : log);
       state.loading = false;
+    },
+    [searchLog.fulfilled]: (state, action) => {
+      state.logs = action.payload;
+      state.loading = false;
     }
   }
 });
 
 export const { setLoading, setCurrent, clearCurrent } = logSlice.actions;
-export { getLogs, addLog, deleteLog, updateLog };
+export { getLogs, addLog, deleteLog, updateLog, searchLog };
 export default logSlice.reducer;

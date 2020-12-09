@@ -1,9 +1,8 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 
-//import logReducer from './reducers/logReducer';
 import logReducer from './components/logs/logSlice';
-//import techReducer from './reducers/techRedu∂cer';
 import techReducer from './components/techs/techSlice';
+
 const store = configureStore({
   reducer: {
     log: logReducer,
