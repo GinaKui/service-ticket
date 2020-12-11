@@ -32,7 +32,7 @@ const AddLogModal = ({ addLog }) => {
   };
 
   return (
-    <div id='add-log-modal' className='modal modal-fixed-footer' style={modalStyle}>
+    <div id='add-log-modal' className='modal' style={modalStyle}>
       <div className='modal-content'>
         <div className='row'>
           <h4 className='col s12'>New Request Ticket</h4>
@@ -84,20 +84,24 @@ const AddLogModal = ({ addLog }) => {
         </div>
       </div>
       <div className='modal-footer'>
-        <div className='container center'>
-          <a
-            href='#!'
-            onClick={onSubmit}
-            className='modal-close waves-effect indigo darken-3 white-text waves-light btn'
-          >
-            Submit
-          </a>
-          <a
-            href='#!'
-            className='modal-close waves-effect deep-orange darken-4 white-text waves-light btn'
-          >
-            Cancel
-          </a>
+        <div className='row'>
+          <div className="col s2 offset-s3">
+            <a
+              href='#!'
+              onClick={onSubmit}
+              className='modal-close waves-effect indigo darken-3 white-text waves-light btn'
+            >
+              Submit
+            </a>
+          </div>
+          <div className="col s2 offset-s2">
+            <a
+              href='#!'
+              className='modal-close waves-effect deep-orange darken-4 white-text waves-light btn'
+            >
+              Cancel
+            </a>
+          </div>
         </div>
       </div>
     </div>
