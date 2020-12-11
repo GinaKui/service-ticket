@@ -19,7 +19,6 @@ const LogList = () => {
 
   return (
     <ul className='collection with-header'>
-    {/*TODO: the title need to be moved out of <ul> */}
       <li className='collection-header'>
         <h4 className='center'>
           Service Requests
