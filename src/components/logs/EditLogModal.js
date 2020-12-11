@@ -90,20 +90,20 @@ const EditLogModal = ({ current, updateLog }) => {
       </div>
       <div className='modal-footer'>
         <div className='container center'>
-            <a
-              href='#!'
-              onClick={onSubmit}
-              className='modal-close waves-effect indigo darken-3 white-text waves-light btn'
-            >
-              Submit
-            </a>
-            <a
-              href='#!'
-              className='modal-close waves-effect deep-orange darken-4 white-text waves-light btn'
-            >
-              Cancel
-            </a>
-          </div>
+          <a
+            href='#!'
+            onClick={onSubmit}
+            className='modal-close waves-effect indigo darken-3 white-text waves-light btn'
+          >
+            Submit
+          </a>
+          <a
+            href='#!'
+            className='modal-close waves-effect deep-orange darken-4 white-text waves-light btn'
+          >
+            Cancel
+          </a>
+        </div>
       </div>
     </div>
   );
