@@ -10,7 +10,6 @@ const initialState = {
 const getLogs = createAsyncThunk(
   'log/getLogs',
   async thunkAPI => {
-    setLoading();
     const res = await fetch('/logs');
     const data = await res.json();
     return data;
@@ -20,7 +19,6 @@ const getLogs = createAsyncThunk(
 const addLog = createAsyncThunk(
   'log/addLog',
   async (log, thunkAPI) => {
-    setLoading();
     const res = await fetch('/logs', {
       method: 'POST',
       body: JSON.stringify(log),
@@ -36,7 +34,6 @@ const addLog = createAsyncThunk(
 const deleteLog = createAsyncThunk(
   'log/deleteLog',
   async (id, thunkAPI) => {
-    setLoading();
     await fetch(`/logs/${id}`, {
       method: 'DELETE'
     });
@@ -47,7 +44,6 @@ const deleteLog = createAsyncThunk(
 const updateLog = createAsyncThunk(
   'log/updateLog',
   async(log, thunkAPI) => {
-    setLoading();
     const res = await fetch(`/logs/${log.id}`, {
       method: 'PUT',
       body: JSON.stringify(log),
@@ -84,21 +80,36 @@ const logSlice = createSlice({
     }
   },
   extraReducers: {
+    [getLogs.pending]: (state) => {
+      state.loading = true;
+    },
     [getLogs.fulfilled]: (state, action) => {
       state.logs = action.payload;
       state.loading = false;
+    },
+    [addLog.pending]: (state) => {
+      state.loading = true;
     },
     [addLog.fulfilled]: (state, action) => {
       state.logs.push(action.payload);
       state.loading = false;
     },
+    [deleteLog.pending]: (state) => {
+      state.loading = true;
+    },
     [deleteLog.fulfilled]: (state, action) => {
       state.logs = state.logs.filter( ({ id }) => id !== action.payload );
       state.loading = false;
     },
+    [updateLog.pending]: (state) => {
+      state.loading = true;
+    },
     [updateLog.fulfilled]: (state, action) => {
       state.logs = state.logs.map( log => log.id === action.payload.id ? action.payload : log);
       state.loading = false;
+    },
+    [searchLog.pending]: (state) => {
+      state.loading = true;
     },
     [searchLog.fulfilled]: (state, action) => {
       state.logs = action.payload;
