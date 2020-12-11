@@ -2,15 +2,14 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   techs: [],
-  loading: false,
+  status: 'idle', //'loading','succeeded'
   error: null
 };
 //@TODO: - loading field should use enums, loading/idle/error...etc
 
 const getTechs = createAsyncThunk(
   'tech/getTechs',
-  async (thunkAPI) => {
-    setLoading(); //may cause problem
+  async () => {
     const res = await fetch('/techs');
     const data = await res.json();
     return data;
@@ -20,7 +19,6 @@ const getTechs = createAsyncThunk(
 const addTech = createAsyncThunk(
   'tech/addTech',
   async (tech, thunkAPI) => {
-    setLoading();
     const res = await fetch('/techs', {
       method: 'POST',
       body: JSON.stringify(tech),
@@ -36,7 +34,6 @@ const addTech = createAsyncThunk(
 const deleteTech = createAsyncThunk(
   'tech/deleteTech',
   async (id, thunkAPI) => {
-    setLoading();
     await fetch(`/techs/${id}`, {
       method: 'DELETE'
     });
@@ -51,25 +48,30 @@ const techSlice = createSlice({
     setLoading(state, action) {
       // ✅ This "mutating" code is okay
       // createSlice use Immer to update to keep the immutability
-      return {
-        ...state,
-        loading: true
-      }
+      state.status = 'loading'
     }
   },
   extraReducers: {
-    //@TODO: - loading should be set here as .pending
+    [getTechs.pending]: (state, action) => {
+      state.status = 'loading';
+    },
     [getTechs.fulfilled]: (state, action) => {
       state.techs = action.payload;
-      state.loading = false;
+      state.status = 'succeeded';
+    },
+    [addTech.pending]: (state, action) => {
+      state.status = 'loading';
     },
     [addTech.fulfilled]: (state, action) => {
       state.techs.push(action.payload);
-      state.loading = false;
+      state.status = 'succeeded';
+    },
+    [deleteTech.pending]: (state, action) => {
+      state.status = 'loading';
     },
     [deleteTech.fulfilled]: (state, action) => {
       state.techs = state.techs.filter(tech => tech.id !== action.payload);
-      state.loading = false;
+      state.status = 'succeeded';
     }
   }
 });
