@@ -9,7 +9,7 @@ const initialState = {
 
 const getLogs = createAsyncThunk(
   'log/getLogs',
-  async thunkAPI => {
+  async () => {
     const res = await fetch('/logs');
     const data = await res.json();
     return data;
@@ -118,6 +118,9 @@ const logSlice = createSlice({
   }
 });
 
+const selectAllLogs = state => state.log.logs;
+const selectLogStatus = state => state.log.status;
+
 export const { setLoading, setCurrent, clearCurrent } = logSlice.actions;
-export { getLogs, addLog, deleteLog, updateLog, searchLog };
+export { getLogs, addLog, deleteLog, updateLog, searchLog, selectLogStatus, selectAllLogs };
 export default logSlice.reducer;

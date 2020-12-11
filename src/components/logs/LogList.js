@@ -1,13 +1,13 @@
 import React from 'react';
-import {  useSelector, useDispatch } from 'react-redux';
-import { getLogs } from './logSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { getLogs, selectLogStatus, selectAllLogs } from './logSlice';
 import Preloader from '../layout/Preloader';
 import LogItem from './LogItem';
 
 const LogList = () => {
   const dispatch = useDispatch();
-  const logs = useSelector(state => state.log.logs);
-  const status = useSelector(state => state.log.status);
+  const logs = useSelector(selectAllLogs);
+  const status = useSelector(selectLogStatus);
 
   if (status === 'idle') {
     dispatch(getLogs());
