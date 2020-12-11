@@ -1,19 +1,20 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React from 'react';
+import {  useSelector, useDispatch } from 'react-redux';
 import { getLogs } from './logSlice';
-
 import Preloader from '../layout/Preloader';
 import LogItem from './LogItem';
 
-const LogList = ({ log: { logs, status }, getLogs }) => {
-  useEffect(() => {
-    getLogs();
-    // eslint-disable-next-line
-  }, []);
+const LogList = () => {
+  const dispatch = useDispatch();
+  const logs = useSelector(state => state.log.logs);
+  const status = useSelector(state => state.log.status);
 
-  if (status === 'idle' || status === 'pending') {
+  if (status === 'idle') {
+    dispatch(getLogs());
     return <Preloader />;
+  }
+  if(status === 'loading') {
+    return <Preloader />
   }
 
   return (
@@ -22,8 +23,7 @@ const LogList = ({ log: { logs, status }, getLogs }) => {
       <li className='collection-header'>
         <h4 className='center'>
           Service Requests
-        </h4>
-        
+        </h4>   
       </li>
       {logs.length === 0 ? (
         <p className='center'>No tickets right now...</p>
@@ -34,16 +34,4 @@ const LogList = ({ log: { logs, status }, getLogs }) => {
   );
 };
 
-LogList.propTypes = {
-  log: PropTypes.object.isRequired,
-  getLogs: PropTypes.func.isRequired
-};
-
-const mapStateToProps = state => ({
-  log: state.log
-});
-
-export default connect(
-  mapStateToProps,
-  { getLogs }
-)(LogList);
+export default LogList;
