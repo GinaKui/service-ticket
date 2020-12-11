@@ -59,13 +59,21 @@ const AddTechModal = ({ addTech }) => {
         </div>
       </div>
       <div className='modal-footer'>
-        <a
+        <div className='container center'>
+          <a
+            href='#!'
+            onClick={onSubmit}
+            className='modal-close waves-effect indigo darken-3 white-text waves-light btn'
+          >
+            Submit
+          </a>
+          <a
           href='#!'
-          onClick={onSubmit}
-          className='modal-close waves-effect indigo waves-light btn'
+          className='modal-close waves-effect deep-orange darken-4 white-text waves-light btn'
         >
-          Enter
+          Cancel
         </a>
+        </div>
       </div>
     </div>
   );

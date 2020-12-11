@@ -32,7 +32,7 @@ const AddLogModal = ({ addLog }) => {
   };
 
   return (
-    <div id='add-log-modal' className='modal' style={modalStyle}>
+    <div id='add-log-modal' className='modal modal-fixed-footer' style={modalStyle}>
       <div className='modal-content'>
         <h4>Add Ticket</h4>
         <div className='row'>
@@ -83,15 +83,21 @@ const AddLogModal = ({ addLog }) => {
         </div>
       </div>
       <div className='modal-footer'>
-{/*@TODO - Adjust the button position */}
-          <a
-            href='#!'
-            onClick={onSubmit}
-            className='modal-close waves-effect indigo waves-light btn'
-          >
-            Submit
-          </a>
-
+      <div className='container center'>
+        <a
+          href='#!'
+          onClick={onSubmit}
+          className='modal-close waves-effect indigo darken-3 white-text waves-light btn'
+        >
+          Submit
+        </a>
+        <a
+          href='#!'
+          className='modal-close waves-effect deep-orange darken-4 white-text waves-light btn'
+        >
+          Cancel
+        </a>
+      </div>
       </div>
     </div>
   );
