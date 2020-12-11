@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  logs: null,
+  logs: [],
   current: null,
-  loading: true,
+  status: 'idle',//'idle', 'loading', 'succeeded'
   error: null
 };
 
@@ -70,7 +70,7 @@ const logSlice = createSlice({
   initialState,
   reducers: {
     setLoading: (state, action) => {
-      state.loading = true;
+      state.status = 'loading';
     },
     setCurrent: (state, action) => {
       state.current = action.payload;
@@ -81,39 +81,39 @@ const logSlice = createSlice({
   },
   extraReducers: {
     [getLogs.pending]: (state) => {
-      state.loading = true;
+      state.status = 'loading';
     },
     [getLogs.fulfilled]: (state, action) => {
       state.logs = action.payload;
-      state.loading = false;
+      state.status = 'succeeded';
     },
     [addLog.pending]: (state) => {
-      state.loading = true;
+      state.status = 'loading';
     },
     [addLog.fulfilled]: (state, action) => {
       state.logs.push(action.payload);
-      state.loading = false;
+      state.status = 'succeeded';
     },
     [deleteLog.pending]: (state) => {
-      state.loading = true;
+      state.status = 'loading';
     },
     [deleteLog.fulfilled]: (state, action) => {
       state.logs = state.logs.filter( ({ id }) => id !== action.payload );
-      state.loading = false;
+      state.status = 'succeeded';
     },
     [updateLog.pending]: (state) => {
-      state.loading = true;
+      state.status = 'loading';
     },
     [updateLog.fulfilled]: (state, action) => {
       state.logs = state.logs.map( log => log.id === action.payload.id ? action.payload : log);
-      state.loading = false;
+      state.status = 'succeeded';
     },
     [searchLog.pending]: (state) => {
-      state.loading = true;
+      state.status = 'loading';
     },
     [searchLog.fulfilled]: (state, action) => {
       state.logs = action.payload;
-      state.loading = false;
+      state.status = 'succeeded';
     }
   }
 });

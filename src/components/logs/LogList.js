@@ -6,13 +6,13 @@ import { getLogs } from './logSlice';
 import Preloader from '../layout/Preloader';
 import LogItem from './LogItem';
 
-const LogList = ({ log: { logs, loading }, getLogs }) => {
+const LogList = ({ log: { logs, status }, getLogs }) => {
   useEffect(() => {
     getLogs();
     // eslint-disable-next-line
   }, []);
 
-  if (loading || logs === null) {
+  if (status === 'idle' || status === 'pending') {
     return <Preloader />;
   }
 
