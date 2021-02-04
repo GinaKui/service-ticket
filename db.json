@@ -27,6 +27,13 @@
       "attention": false,
       "tech": "Olivia Smith",
       "date": "2020-12-09T11:39:34.925Z"
+    },
+    {
+      "message": "fix #2 router",
+      "attention": true,
+      "tech": "Gina Kui",
+      "date": "2020-12-11T17:28:04.057Z",
+      "id": 15
     }
   ],
   "techs": [
@@ -41,14 +48,9 @@
       "id": 4
     },
     {
-      "firstName": "Youguang",
+      "firstName": "Gina",
       "lastName": "Kui",
       "id": 5
-    },
-    {
-      "firstName": "gigig",
-      "lastName": "Ohi",
-      "id": 6
     }
   ]
 }
